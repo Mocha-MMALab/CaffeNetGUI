@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{80D01279-14D8-45A9-85F6-0D1D104A5348}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>LayerLib</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\..\..\MMALib\lib\$(Configuration)\$(PlatformTarget)</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\..\..\MMALib\lib\$(Configuration)\$(PlatformTarget)</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\..\MMALib\lib\$(Configuration)\$(PlatformTarget)</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\..\MMALib\lib\$(Configuration)\$(PlatformTarget)</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;LAYERLIB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy ..\..\..\MMALib\lib\$(Configuration)\$(PlatformTarget)\$(ProjectName).dll ..\..\..\MMALib\bin\$(Configuration)\$(PlatformTarget)
+copy *.h ..\..\..\MMALib\include
+del ..\..\..\MMALib\lib\$(Configuration)\$(PlatformTarget)\$(ProjectName).dll</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;LAYERLIB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy ..\..\..\MMALib\lib\$(Configuration)\$(PlatformTarget)\$(ProjectName).dll ..\..\..\MMALib\bin\$(Configuration)\$(PlatformTarget)
+copy *.h ..\..\..\MMALib\include
+del ..\..\..\MMALib\lib\$(Configuration)\$(PlatformTarget)\$(ProjectName).dll</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;LAYERLIB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy ..\..\..\MMALib\lib\$(Configuration)\$(PlatformTarget)\$(ProjectName).dll ..\..\..\MMALib\bin\$(Configuration)\$(PlatformTarget)
+copy *.h ..\..\..\MMALib\include
+del ..\..\..\MMALib\lib\$(Configuration)\$(PlatformTarget)\$(ProjectName).dll</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;LAYERLIB_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy ..\..\..\MMALib\lib\$(Configuration)\$(PlatformTarget)\$(ProjectName).dll ..\..\..\MMALib\bin\$(Configuration)\$(PlatformTarget)
+copy *.h ..\..\..\MMALib\include
+del ..\..\..\MMALib\lib\$(Configuration)\$(PlatformTarget)\$(ProjectName).dll</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="BaseLayer.h" />
+    <ClInclude Include="CommonLayerParam.h" />
+    <ClInclude Include="CommonLayers.h" />
+    <ClInclude Include="DataBlob.h" />
+    <ClInclude Include="DataLayerParam.h" />
+    <ClInclude Include="DataLayers.h" />
+    <ClInclude Include="LayerEnum.h" />
+    <ClInclude Include="LayerParam.h" />
+    <ClInclude Include="Layers.h" />
+    <ClInclude Include="LossLayerParam.h" />
+    <ClInclude Include="LossLayers.h" />
+    <ClInclude Include="NeuronLayerParam.h" />
+    <ClInclude Include="NeuronLayers.h" />
+    <ClInclude Include="VisionLayerParam.h" />
+    <ClInclude Include="VisionLayers.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AccuaryLayer.cpp" />
+    <ClCompile Include="AccuracyParam.cpp" />
+    <ClCompile Include="ArgMaxLayer.cpp" />
+    <ClCompile Include="ArgMaxParam.cpp" />
+    <ClCompile Include="BaseLayer.cpp" />
+    <ClCompile Include="ConcatLayer.cpp" />
+    <ClCompile Include="ConcatParam.cpp" />
+    <ClCompile Include="ContrastiveLossLayer.cpp" />
+    <ClCompile Include="ContrastiveLossParam.cpp" />
+    <ClCompile Include="ConvolutionLayer.cpp" />
+    <ClCompile Include="ConvolutionParam.cpp" />
+    <ClCompile Include="DataBlob.cpp" />
+    <ClCompile Include="DataLayer.cpp" />
+    <ClCompile Include="DataParam.cpp" />
+    <ClCompile Include="DropoutLayer.cpp" />
+    <ClCompile Include="DropoutParam.cpp" />
+    <ClCompile Include="DummyDataLayer.cpp" />
+    <ClCompile Include="DummyDataParam.cpp" />
+    <ClCompile Include="EltwiseLayer.cpp" />
+    <ClCompile Include="EltwiseParam.cpp" />
+    <ClCompile Include="ExpLayer.cpp" />
+    <ClCompile Include="ExpParam.cpp" />
+    <ClCompile Include="FlattenLayer.cpp" />
+    <ClCompile Include="FlattenParam.cpp" />
+    <ClCompile Include="HDF5DataLayer.cpp" />
+    <ClCompile Include="HDF5DataParam.cpp" />
+    <ClCompile Include="HDF5OutputLayer.cpp" />
+    <ClCompile Include="HDF5OutputParam.cpp" />
+    <ClCompile Include="HingeLossLayer.cpp" />
+    <ClCompile Include="HingeLossParam.cpp" />
+    <ClCompile Include="ImageDataLayer.cpp" />
+    <ClCompile Include="ImageDataParam.cpp" />
+    <ClCompile Include="InfogainLossLayer.cpp" />
+    <ClCompile Include="InfogainLossParam.cpp" />
+    <ClCompile Include="InnerProductLayer.cpp" />
+    <ClCompile Include="InnerProductParam.cpp" />
+    <ClCompile Include="LogLayer.cpp" />
+    <ClCompile Include="LogParam.cpp" />
+    <ClCompile Include="LRNLayer.cpp" />
+    <ClCompile Include="LRNParam.cpp" />
+    <ClCompile Include="MemoryDataLayer.cpp" />
+    <ClCompile Include="MemoryDataParam.cpp" />
+    <ClCompile Include="MVNLayer.cpp" />
+    <ClCompile Include="MVNParam.cpp" />
+    <ClCompile Include="OtherParam.cpp" />
+    <ClCompile Include="PoolingLayer.cpp" />
+    <ClCompile Include="PoolingParam.cpp" />
+    <ClCompile Include="PowerLayer.cpp" />
+    <ClCompile Include="PowerParam.cpp" />
+    <ClCompile Include="PReLULayer.cpp" />
+    <ClCompile Include="PReLUParam.cpp" />
+    <ClCompile Include="ReductionLayer.cpp" />
+    <ClCompile Include="ReductionParam.cpp" />
+    <ClCompile Include="ReLULayer.cpp" />
+    <ClCompile Include="ReLUParam.cpp" />
+    <ClCompile Include="ReshapeLayer.cpp" />
+    <ClCompile Include="ReshapeParam.cpp" />
+    <ClCompile Include="SigmoidLayer.cpp" />
+    <ClCompile Include="SigmoidParam.cpp" />
+    <ClCompile Include="SliceLayer.cpp" />
+    <ClCompile Include="SliceParam.cpp" />
+    <ClCompile Include="SoftMaxLayer.cpp" />
+    <ClCompile Include="SoftMaxParam.cpp" />
+    <ClCompile Include="SPPLayer.cpp" />
+    <ClCompile Include="SPPParam.cpp" />
+    <ClCompile Include="TanHLayer.cpp" />
+    <ClCompile Include="TanHParam.cpp" />
+    <ClCompile Include="test\main.cpp" />
+    <ClCompile Include="ThresholdLayer.cpp" />
+    <ClCompile Include="ThresholdParam.cpp" />
+    <ClCompile Include="WindowDataLayer.cpp" />
+    <ClCompile Include="WindowDataParam.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

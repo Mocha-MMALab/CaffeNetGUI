@@ -1,0 +1,26 @@
+<RCC>
+    <qresource prefix="/MainWindow">
+        <file alias="background1.png">images/MainWindow/background1.png</file>
+        <file alias="background2.png">images/MainWindow/background2.png</file>
+        <file alias="background3.png">images/MainWindow/background3.png</file>
+        <file alias="background4.png">images/MainWindow/background4.png</file>
+        <file alias="bold.png">images/MainWindow/bold.png</file>
+        <file alias="bringtofront.png">images/MainWindow/bringtofront.png</file>
+        <file alias="delete.png">images/MainWindow/delete.png</file>
+        <file alias="dottedlinepointer.png">images/MainWindow/dottedlinepointer.png</file>
+        <file alias="export.png">images/MainWindow/export.png</file>
+        <file alias="floodfill.png">images/MainWindow/floodfill.png</file>
+        <file alias="import.png">images/MainWindow/import.png</file>
+        <file alias="italic.png">images/MainWindow/italic.png</file>
+        <file alias="linecolor.png">images/MainWindow/linecolor.png</file>
+        <file alias="linepointer.png">images/MainWindow/linepointer.png</file>
+        <file alias="pointer.png">images/MainWindow/pointer.png</file>
+        <file alias="sendtoback.png">images/MainWindow/sendtoback.png</file>
+        <file alias="test.png">images/MainWindow/test.png</file>
+        <file alias="textpointer.png">images/MainWindow/textpointer.png</file>
+        <file alias="time.png">images/MainWindow/time.png</file>
+        <file alias="train.png">images/MainWindow/train.png</file>
+        <file alias="underline.png">images/MainWindow/underline.png</file>
+        <file alias="about.png">images/MainWindow/about.png</file>
+    </qresource>
+</RCC>
