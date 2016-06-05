@@ -1,4 +1,4 @@
-# CaffeNetGUI install step
+# Mocha install step
 
 ## Install cuda
 ```css
