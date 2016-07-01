@@ -41,7 +41,7 @@
 1.  Unzip Qwt.zip
 2.  Use Qt Creator qmake qwt.pro
 3.  Copy libqwt.so.* in Qwt lib folder to ./Mocha/Qwt/bin
-    (Please create a folder ,when folder does not exist)
+    (Please create a bin folder ,when folder does not exist)
 4.$ run ./install.sh
 5.  Use Qt build Mocha.pro
 ```
