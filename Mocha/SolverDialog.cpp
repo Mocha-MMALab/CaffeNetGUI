@@ -294,7 +294,6 @@ void SolverDialog::changeLrPolicy(int policy)
             multistepLayout->addWidget(new QLabel(tr("    Gamma :")), 1, 0);
             lineEditStepValue = new QLineEdit();
             lineEditGamma = new QLineEdit();
-            lineEditStepValue->setValidator(intValidator);
             lineEditGamma->setValidator(doubleValidator);
             multistepLayout->addWidget(lineEditStepValue, 0, 1);
             multistepLayout->addWidget(lineEditGamma, 1, 1);
