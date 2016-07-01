@@ -366,7 +366,7 @@ namespace MMALab
 		case MMALab::XAVIER:
 			{
                                 //string temp1 = "\"\n\t\t\tsparse: ";
-                                string temp2 = "\n\t\t\tstd: ";
+                                string temp2 = "\"\n\t\t\tstd: ";
                                 string temp3 = "\n\t\t\tvariance_norm: ";
 				Xavier* filter = (Xavier*)getWeightfilter();
 
@@ -405,7 +405,7 @@ namespace MMALab
                             string temp1 = "\n\t\t\tvariance_norm: ";
                             Msra* filter = (Msra*)getWeightfilter();
 
-                            outStr = outStr + weightFillerStrStart + filter->mName;
+                            outStr = outStr + weightFillerStrStart + filter->mName + "\"";
                             if(filter->mVarianceNorm!=MMALab::VarianceNorm::FAN_IN)
                             {
                                 switch(filter->mVarianceNorm)
@@ -452,7 +452,7 @@ namespace MMALab
 		case MMALab::XAVIER:
 			{
                                 //string temp1 = "\"\n\t\t\tsparse: ";
-                                string temp2 = "\n\t\t\tstd: ";
+                                string temp2 = "\"\n\t\t\tstd: ";
                                 string temp3 = "\n\t\t\tvariance_norm: ";
                                 Xavier* filter = (Xavier*)getBiasfilter();
 
@@ -491,7 +491,7 @@ namespace MMALab
                             string temp1 = "\n\t\t\tvariance_norm: ";
                             Msra* filter = (Msra*)getBiasfilter();
 
-                            outStr = outStr + biasFillerStrStart + filter->mName;
+                            outStr = outStr + biasFillerStrStart + filter->mName + "\"";
                             if(filter->mVarianceNorm!=MMALab::VarianceNorm::FAN_IN)
                             {
                                 switch(filter->mVarianceNorm)

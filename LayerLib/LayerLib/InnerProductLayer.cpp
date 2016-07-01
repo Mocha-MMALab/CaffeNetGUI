@@ -338,7 +338,7 @@ namespace MMALab
                              string temp1 = "\n\t\t\tvariance_norm: ";
                              Msra* filter = (Msra*)getWeightfilter();
 
-                             outStr = outStr + weightFillerStrStart + filter->mName;
+                             outStr = outStr + weightFillerStrStart + filter->mName + "\"";
                              if(filter->mVarianceNorm!=MMALab::FAN_IN)
                              {
                                  switch(filter->mVarianceNorm)
@@ -432,7 +432,7 @@ namespace MMALab
                             string temp1 = "\n\t\t\tvariance_norm: ";
                             Msra* filter = (Msra*)getBiasfilter();
 
-                            outStr = outStr + biasFillerStrStart + filter->mName;
+                            outStr = outStr + biasFillerStrStart + filter->mName + "\"";
                             if(filter->mVarianceNorm!=MMALab::FAN_IN)
                             {
                                 switch(filter->mVarianceNorm)

@@ -12,7 +12,8 @@ HEADERS = LayerDiagramItem.h \
                     TimeDialog.h \
                     TrainDialog.h \
                     ParseLog.h \
-                    Versions.h
+                    Versions.h \
+    SolverDialog.h
 
 SOURCES = main.cpp \
                     LayerDiagramItem.cpp \
@@ -24,7 +25,8 @@ SOURCES = main.cpp \
                     TestDialog.cpp \
                     TimeDialog.cpp \
                     TrainDialog.cpp \
-                    ParseLog.cpp
+                    ParseLog.cpp \
+    SolverDialog.cpp
 
 RESOURCES   =   DiagramScene.qrc
 
@@ -46,6 +48,11 @@ else:unix: LIBS += -L$$PWD/MMALib/bin/ -lNN
 win32: PRE_TARGETDEPS += $$PWD/MMALib/lib/NNLib.lib
 else:unix: PRE_TARGETDEPS += $$PWD/MMALib/lib/libNN.a
 
+win32: LIBS += -L$$PWD/MMALib/lib/ -lSolverLib
+else:unix: LIBS += -L$$PWD/MMALib/bin/ -lSolver
+
+win32: PRE_TARGETDEPS += $$PWD/MMALib/lib/SolverLib.lib
+else:unix: PRE_TARGETDEPS += $$PWD/MMALib/lib/libSolver.a
 
 INCLUDEPATH +=  $$PWD/../CaffeToolsLib/caffe/include \
                 $$PWD/../CaffeToolsLib/caffe/build/src \

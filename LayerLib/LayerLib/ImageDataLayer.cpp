@@ -161,6 +161,9 @@ namespace MMALab
 		string bottomStrStart = "\tbottom: \"";
 		string bottomStrEnd = "\"\n";
 
+                string transformParamStrStart = "\ttransform_param\n\t{\n";
+                string transformParamStrEnd ="\t}\n";
+
 		string ImagedataParamStrStart = "\timage_data_param\n\t{\n";
 		string ImagedataParamStrEnd ="\t}\n";
 
@@ -220,13 +223,32 @@ namespace MMALab
 			outStr = outStr + bottomStrStart + (*mBottoms)[i] +bottomStrEnd;
 		}
 
+                outStr += transformParamStrStart;
+
+                if(((ImageDataParam*)mParam)->mScale != 1)
+                {
+                        outStr += ScaleStrStart + to_string(getScale()) + ScaleStrEnd;
+                }
+
+                if (getMeanFile() != "")
+                {
+                        outStr += MeanFileStrStart + "\"" + getMeanFile() + "\"" + MeanFileStrEnd;
+                }
+
+                if(((ImageDataParam*)mParam)->mCropSize != 0)
+                {
+                        outStr += CropSizeStrStart + to_string(getCropSize()) + CropSizeStrEnd;
+                }
+
+                if(((ImageDataParam*)mParam)->mMirror != false)
+                {
+                        outStr += MirrorStrStart + "true" + MirrorStrEnd;
+                }
+                outStr += transformParamStrEnd;
+
 		outStr += ImagedataParamStrStart;
 
-		if (getSource() == "")
-		{
-
-		}
-		else
+                if (getSource() != "")
 		{
 			outStr += SourceSrtStart + "\"" + getSource() + "\"" + SourceSrtEnd;
 		}
@@ -256,30 +278,6 @@ namespace MMALab
 		if(((ImageDataParam*)mParam)->mIsColor != true)
 		{
 			outStr += IsColorStrStart + "false" + IsColorStrEnd;
-		}
-
-		if(((ImageDataParam*)mParam)->mScale != 1)
-		{
-			outStr += ScaleStrStart + to_string(getScale()) + ScaleStrEnd;
-		}
-
-		if (getMeanFile() == "")
-		{
-
-		}
-		else
-		{
-			outStr += MeanFileStrStart + "\"" + getMeanFile() + "\"" + MeanFileStrEnd;
-		}		
-
-		if(((ImageDataParam*)mParam)->mCropSize != 0)
-		{
-			outStr += CropSizeStrStart + to_string(getCropSize()) + CropSizeStrEnd;
-		}
-
-		if(((ImageDataParam*)mParam)->mMirror != false)
-		{
-			outStr += MirrorStrStart + "true" + MirrorStrEnd;
 		}
 
 		if(((ImageDataParam*)mParam)->mRootFolder != "")

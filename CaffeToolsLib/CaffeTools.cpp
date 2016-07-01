@@ -34,6 +34,11 @@ namespace MMALab
         return *mNetParam;
     }
 
+	SolverParameter CaffeTools::getSolverParam()
+    {
+        return *mSolverParam;
+    }
+
    	//use terminal run time train test function
 	void CaffeTools::time(string inputCaffeLocal,string inputModel,
 		string inputGpu,string inputLogOutputLocal)

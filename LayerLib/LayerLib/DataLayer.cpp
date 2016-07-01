@@ -139,7 +139,10 @@ namespace MMALab
 		string topStrEnd = "\"\n";
 
 		string bottomStrStart = "\tbottom: \"";
-		string bottomStrEnd = "\"\n";
+                string bottomStrEnd = "\"\n";
+
+                string transformParamStrStart = "\ttransform_param\n\t{\n";
+                string transformParamStrEnd ="\t}\n";
 
 		string dataParamStrStart = "\tdata_param\n\t{\n";
 		string dataParamStrEnd ="\t}\n";
@@ -194,13 +197,32 @@ namespace MMALab
 			outStr = outStr + bottomStrStart + (*mBottoms)[i] +bottomStrEnd;
 		}
 
+                outStr += transformParamStrStart;
+
+                if(((DataParam*)mParam)->mScale != 1)
+                {
+                        outStr += ScaleStrStart + to_string(getScale()) + ScaleStrEnd;
+                }
+
+                if (getMeanfile() != "")
+                {
+                        outStr += MeanFileStrStart + "\"" + getMeanfile() + "\"" + MeanFileStrEnd;
+                }
+
+                if(((DataParam*)mParam)->mCropsize != 0)
+                {
+                        outStr += CropSizeStrStart + to_string(getCropsize()) + CropSizeStrEnd;
+                }
+
+                if(((DataParam*)mParam)->mMirror != false)
+                {
+                        outStr += MirrorStrStart + "true" + MirrorStrEnd;
+                }
+                outStr += transformParamStrEnd;
+
 		outStr += dataParamStrStart;
 
-		if (getSource() == "")
-		{
-
-		}
-		else
+                if (getSource() != "")
 		{
 			outStr += SourceStrStart + "\"" + getSource() + "\"" + SourceStrEnd;
 		}
@@ -224,30 +246,6 @@ namespace MMALab
 					outStr += backendStrStart + "LMDB" + backendStrEnd;
 					break;
 			}
-		}
-
-		if(((DataParam*)mParam)->mScale != 1)
-		{
-			outStr += ScaleStrStart + to_string(getScale()) + ScaleStrEnd;
-		}
-
-		if (getMeanfile() == "")
-		{
-
-		}
-		else
-		{
-			outStr += MeanFileStrStart + "\"" + getMeanfile() + "\"" + MeanFileStrEnd;
-		}		
-
-		if(((DataParam*)mParam)->mCropsize != 0)
-		{
-			outStr += CropSizeStrStart + to_string(getCropsize()) + CropSizeStrEnd;
-		}
-
-		if(((DataParam*)mParam)->mMirror != false)
-		{
-			outStr += MirrorStrStart + "true" + MirrorStrEnd;
 		}
 
 		if(((DataParam*)mParam)->mForceEncodedcolor != false)

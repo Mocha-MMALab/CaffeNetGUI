@@ -53,6 +53,7 @@
 #include "TimeDialog.h"
 #include "TrainDialog.h"
 #include "TestDialog.h"
+#include "SolverDialog.h"
 
 #include <QMainWindow>
 #include <QtWidgets>
@@ -123,6 +124,7 @@ private slots:
     void time();
     void train();
     void test();
+    void solver();
 
     void sortLayers(int num);
     void reviseSorting();
@@ -192,6 +194,7 @@ private:
     QAction *timeAction;
     QAction *trainAction;
     QAction *testAction;
+    QAction *solverAction;
 
     vector<LayerNode> mLayerNode;
     map<int, int> myNodeMap;

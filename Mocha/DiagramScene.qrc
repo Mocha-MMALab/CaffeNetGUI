@@ -22,5 +22,6 @@
         <file alias="train.png">images/MainWindow/train.png</file>
         <file alias="underline.png">images/MainWindow/underline.png</file>
         <file alias="about.png">images/MainWindow/about.png</file>
+        <file alias="solver.png">images/MainWindow/solver.png</file>
     </qresource>
 </RCC>

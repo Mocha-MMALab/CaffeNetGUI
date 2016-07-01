@@ -586,6 +586,13 @@ void MainWindow::createActions()
     testAction->setShortcut(tr("Ctrl+3"));
     testAction->setStatusTip(tr("Test"));
     connect(testAction, SIGNAL(triggered()), this, SLOT(test()));
+
+    //solver
+    solverAction = new QAction(QIcon(":/MainWindow/solver.png"),
+                                tr("Solver"), this);
+    solverAction->setShortcut(tr("Ctrl+4"));
+    solverAction->setStatusTip(tr("Solver"));
+    connect(solverAction, SIGNAL(triggered()), this, SLOT(solver()));
 }
 
 void MainWindow::createMenus()
@@ -596,6 +603,7 @@ void MainWindow::createMenus()
     fileMenu->addAction(timeAction);
     fileMenu->addAction(trainAction);
     fileMenu->addAction(testAction);
+    fileMenu->addAction(solverAction);
     fileMenu->addSeparator();
     fileMenu->addAction(exitAction);
 
@@ -617,6 +625,7 @@ void MainWindow::createToolbars()
     editToolBar->addAction(timeAction);
     editToolBar->addAction(trainAction);
     editToolBar->addAction(testAction);
+    editToolBar->addAction(solverAction);
     editToolBar->addAction(deleteAction);
     editToolBar->addAction(toFrontAction);
     editToolBar->addAction(sendBackAction);
@@ -854,7 +863,7 @@ int MainWindow::exportNN()
 
 void MainWindow::importNN()
 {
-    QString fileName = QFileDialog::getOpenFileName(this, tr("ixport to caffe prototxt file"),
+    QString fileName = QFileDialog::getOpenFileName(this, tr("import to caffe prototxt file"),
                                                     "./NN",
                                                     tr("caffe prototxt file(*.prototxt)"));
     if (!fileName.isEmpty())
@@ -938,6 +947,12 @@ void MainWindow::test()
     mTestDialog->show();
 }
 
+void MainWindow::solver()
+{
+    SolverDialog* mSolverDialog = new SolverDialog();
+    connect (this, SIGNAL(sendMainWindowCloseSignal()), mSolverDialog, SLOT(receiveMainWindowCloseSignal()));
+    mSolverDialog->show();
+}
 
 void MainWindow::sortLayers(int num)
 {

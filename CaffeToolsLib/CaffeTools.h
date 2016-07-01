@@ -46,6 +46,7 @@ namespace MMALab
         void saveNetProTextFile(string filename);
 
         NetParameter getNetParam();
+        SolverParameter getSolverParam();
 
 		void time(string inputCaffeLocal,string inputModel,
 			string inputGpu,string inputLogOutputLocal);

@@ -1917,10 +1917,10 @@ void LayerProperties::updateGUIProperties(LayerParameter layerParam)
             mIntManager->setValue(mPropertyBrowser->properties().at(5), layerParam.image_data_param().new_height());
             mIntManager->setValue(mPropertyBrowser->properties().at(6), layerParam.image_data_param().new_width());
             mBoolManager->setValue(mPropertyBrowser->properties().at(7), layerParam.image_data_param().is_color());
-            mDoubleManager->setValue(mPropertyBrowser->properties().at(8), layerParam.image_data_param().scale());
-            mStringManager->setValue(mPropertyBrowser->properties().at(9), QString::fromStdString(layerParam.image_data_param().mean_file()));
-            mIntManager->setValue(mPropertyBrowser->properties().at(10), layerParam.image_data_param().crop_size());
-            mBoolManager->setValue(mPropertyBrowser->properties().at(11), layerParam.image_data_param().mirror());
+            mDoubleManager->setValue(mPropertyBrowser->properties().at(8), layerParam.transform_param().scale());
+            mStringManager->setValue(mPropertyBrowser->properties().at(9), QString::fromStdString(layerParam.transform_param().mean_file()));
+            mIntManager->setValue(mPropertyBrowser->properties().at(10), layerParam.transform_param().crop_size());
+            mBoolManager->setValue(mPropertyBrowser->properties().at(11), layerParam.transform_param().mirror());
             mStringManager->setValue(mPropertyBrowser->properties().at(12), QString::fromStdString(layerParam.image_data_param().root_folder()));
             break;
         }
@@ -1938,10 +1938,10 @@ void LayerProperties::updateGUIProperties(LayerParameter layerParam)
             mIntManager->setValue(mPropertyBrowser->properties().at(2), layerParam.data_param().batch_size());
             mIntManager->setValue(mPropertyBrowser->properties().at(3), layerParam.data_param().rand_skip());
             mEnumManager->setValue(mPropertyBrowser->properties().at(4), layerParam.data_param().backend());
-            mDoubleManager->setValue(mPropertyBrowser->properties().at(5), layerParam.data_param().scale());
-            mStringManager->setValue(mPropertyBrowser->properties().at(6), QString::fromStdString(layerParam.data_param().mean_file()));
-            mIntManager->setValue(mPropertyBrowser->properties().at(7), layerParam.data_param().crop_size());
-            mBoolManager->setValue(mPropertyBrowser->properties().at(8), layerParam.data_param().mirror());
+            mDoubleManager->setValue(mPropertyBrowser->properties().at(5), layerParam.transform_param().scale());
+            mStringManager->setValue(mPropertyBrowser->properties().at(6), QString::fromStdString(layerParam.transform_param().mean_file()));
+            mIntManager->setValue(mPropertyBrowser->properties().at(7), layerParam.transform_param().crop_size());
+            mBoolManager->setValue(mPropertyBrowser->properties().at(8), layerParam.transform_param().mirror());
             mBoolManager->setValue(mPropertyBrowser->properties().at(9), layerParam.data_param().force_encoded_color());
             mIntManager->setValue(mPropertyBrowser->properties().at(10), layerParam.data_param().prefetch());
             break;

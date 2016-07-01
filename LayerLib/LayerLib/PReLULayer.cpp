@@ -202,7 +202,7 @@ namespace MMALab
                     string temp1 = "\n\t\t\tvariance_norm: ";
                     Msra* filter = (Msra*)getFilter();
 
-                    outStr = outStr + fillerStrStart + filter->mName;
+                    outStr = outStr + fillerStrStart + filter->mName + "\"";
                     if(filter->mVarianceNorm!=MMALab::FAN_IN)
                     {
                         switch(filter->mVarianceNorm)
