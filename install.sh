@@ -19,6 +19,13 @@ cd /usr/lib/x86_64-linux-gnu
 sudo ln -s libhdf5_serial.so.8.0.2 libhdf5.so
 sudo ln -s libhdf5_serial_hl.so.8.0.2 libhdf5_hl.so
 
+#create folder
+mkdir $fileLocal/Mocha/MMALib
+mkdir $fileLocal/Mocha/MMALib/bin
+mkdir $fileLocal/Mocha/MMALib/include
+mkdir $fileLocal/Mocha/MMALib/lib
+mkdir $fileLocal/CaffeToolsLib/caffe/build
+
 #make caffe
 cd $fileLocal/CaffeToolsLib/caffe/build
 cmake ..
